@@ -7,11 +7,47 @@
 </head>
 
 <body>
+<div id="customSearchBox">
+  <input type="text" id="searchInput" placeholder="ပိုးရောဂါအမည်ထည့်ပါ" />
+  <button onclick="searchPest()">Search</button>
+</div>
+<div id="results"></div>
   <input type="text" id="searchInput" placeholder="ပိုးရောဂါအမည်ထည့်ပါ" />
   <button onclick="searchPest()">Search</button>
   <div id="results"></div>
 
   <script>
+
+  async function searchPest() {
+    const query = document.getElementById('searchInput').value.trim();
+    const resultContainer = document.getElementById('results');
+    resultContainer.innerHTML = '';
+
+    try {
+      const response = await fetch('data.json');
+      const data = await response.json();
+
+      const match = data.find(entry => entry.pest === query);
+
+      if (!match) {
+        resultContainer.innerHTML = '<p>မတွေ့ရှိပါ။</p>';
+        return;
+      }
+
+      match.ingredients.forEach((item, index) => {
+        const products = item.products.join('၊ ');
+        const line = `${index + 1}. ${item.name_en} - ${item.name_mm} (${products})`;
+
+        const p = document.createElement('p');
+        p.textContent = line;
+        resultContainer.appendChild(p);
+      });
+    } catch (error) {
+      resultContainer.innerHTML = '<p>ဒေတာဖိုင်ဖွင့်လို့မရပါ။</p>';
+      console.error(error);
+    }
+  }
+</script>
     async function searchPest() {
       const query = document.getElementById('searchInput').value.trim();
       const resultContainer = document.getElementById('results');
