@@ -72,6 +72,13 @@
       width: 80%;
       max-width: 500px;
       font-size: 1em;
+      margin-left: -20px;
+      padding-left: 10px;
+    }
+
+    .results h3 {
+      color: green;
+      margin-bottom: 10px;
     }
 
     .results li {
@@ -85,8 +92,8 @@
   </div>
 
   <div class="search-container">
-    <input type="text" class="search-box" id="searchInput" oninput="searchPest()">
-    <ul class="results" id="resultList"></ul>
+    <input type="text" class="search-box" id="searchInput" placeholder="ပိုးအမည်ရေးပါ">
+    <div class="results" id="resultList"></div>
   </div>
 
   <script>
@@ -96,37 +103,52 @@
 
     async function searchPest() {
       const query = document.getElementById("searchInput").value.trim();
-      const list = document.getElementById("resultList");
-      list.innerHTML = "";
+      const container = document.getElementById("resultList");
+      container.innerHTML = "";
+
+      if (query === "") return;
 
       try {
         const response = await fetch("data.json");
         const data = await response.json();
 
-        const match = data.find(entry => entry.pest === query);
+        const matched = data.filter(entry =>
+          entry.pest.includes(query) || entry.pest_en.toLowerCase().includes(query.toLowerCase())
+        );
 
-        if (!match) {
+        if (matched.length === 0) {
           const li = document.createElement("li");
           li.textContent = "မတွေ့ရှိပါ။";
-          list.appendChild(li);
+          container.appendChild(li);
           return;
         }
 
-        match.ingredients.forEach((item, index) => {
-          const products = item.products.join("၊ ");
-          const line = `${index + 1}. ${item.name_en} - ${item.name_mm} (${products})`;
+        matched.forEach(entry => {
+          const pestName = document.createElement("h3");
+          pestName.textContent = entry.pest;
+          container.appendChild(pestName);
 
-          const li = document.createElement("li");
-          li.textContent = line;
-          list.appendChild(li);
+          const ul = document.createElement("ul");
+          entry.ingredients.forEach((item, index) => {
+            const products = item.products.join("၊ ");
+            const line = `${index + 1}. ${item.name_en} - ${item.name_mm} (${products})`;
+
+            const li = document.createElement("li");
+            li.textContent = line;
+            ul.appendChild(li);
+          });
+
+          container.appendChild(ul);
         });
       } catch (error) {
         const li = document.createElement("li");
         li.textContent = "ဒေတာဖိုင်ဖွင့်လို့မရပါ။";
-        list.appendChild(li);
+        container.appendChild(li);
         console.error(error);
       }
     }
+
+    document.getElementById("searchInput").addEventListener("input", searchPest);
   </script>
 </body>
 </html>
