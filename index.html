@@ -1,40 +1,46 @@
 <!DOCTYPE html>
-<html lang="my">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>ရွှေပင်ဆင့်</title>
+  <title>SPS Farmer Help</title>
   <style>
     body {
-      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f8ff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden; /* Prevent scrolling */
+    }
+
+    h1 {
+      font-size: 3em;
       text-align: center;
-      padding: 4em;
-      background-color: #ffffff;
-    }
-
-    .line-one {
-      color: blue;
-      font-size: 1.2em;
-      margin-bottom: 0.5em;
-    }
-
-    .line-two {
-      color: red;
-      font-size: 2.5em;
-      font-weight: bold;
-      margin-top: 0;
-      margin-bottom: 1em;
+      margin-bottom: 30px;
+      color: #2e8b57;
     }
 
     .logo {
-      max-width: 300px;
-      height: auto;
-      margin-top: 1em;
+      width: 350px;
+      max-width: 90%;
+      cursor: pointer;
+    }
+
+    .logo:hover {
+      opacity: 0.8;
     }
   </style>
 </head>
 <body>
-  <div class="line-one">ရွက်ဖျန်းအားလုံးတို့၏ ဧကရာဇ်</div>
-  <div class="line-two">ရွှေပင်ဆင့်</div>
-  <img src="logo.png" alt="Company Logo" class="logo">
+  <h1>Welcome to SPS Farmer Help</h1>
+
+  <!-- Logo links to search.html -->
+  <a href="search.html">
+    <img src="logo.png" alt="SPS Farmer Help Logo" class="logo">
+  </a>
 </body>
 </html>
