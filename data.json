@@ -45,4 +45,40 @@
       }
     ]
   }
+{
+  "pest": "ပင်စည်ထိုးယင်",
+  "pest_en": "Stem Borer",
+  "ingredients": [
+    {
+      "name_en": "Chlorpyrifos",
+      "name_mm": "ခလော်ပီရီဖော့စ်",
+      "products": []
+    },
+    {
+      "name_en": "Lambda-Cyhalothrin",
+      "name_mm": "လမ်ဒါ-ဆိုင်ဟာလိုသရင်",
+      "products": []
+    },
+    {
+      "name_en": "Fipronil",
+      "name_mm": "ဖီပရိုနီး",
+      "products": []
+    },
+    {
+      "name_en": "Cartap Hydrochloride",
+      "name_mm": "ကာတာပ်",
+      "products": []
+    },
+    {
+      "name_en": "Thiamethoxam",
+      "name_mm": "သိုင်ယာမီသောင်ဇမ်",
+      "products": []
+    },
+    {
+      "name_en": "Imidacloprid",
+      "name_mm": "အိုင်မီဒါကလိုပရစ်",
+      "products": []
+    }
+  ]
+}
 ]
