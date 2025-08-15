@@ -147,7 +147,24 @@
         console.error(error);
       }
     }
+<script>
+fetch('data.json')
+  .then(response => response.json())
+  .then(pestData => {
+    pestData.forEach(pest => {
+      console.log(`🐛 Pest: ${pest.pest} (${pest.pest_en})`);
 
+      pest.ingredients.forEach(ingredient => {
+        if (ingredient.products && ingredient.products.length > 0) {
+          console.log(`  🔹 Ingredient: ${ingredient.name_mm} (${ingredient.name_en})`);
+          ingredient.products.forEach(product => {
+            console.log(`      - ${product}`);
+          });
+        }
+      });
+    });
+  });
+</script>
     document.getElementById("searchInput").addEventListener("input", searchPest);
   </script>
 </body>
