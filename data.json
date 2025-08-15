@@ -1,84 +1,47 @@
-[
-  {
-    "pest": "ငမြှောင်တောင်",
-    "pest_en": "Armyworm",
-    "ingredients": [
-      {
-        "name_en": "Emamectin Benzoate",
-        "name_mm": "အီမာမက်တင်ဘန်ဇိုရိတ်",
-        "products": ["အီမာမက် (ရွှေနဂါး)"]
-      },
-      {
-        "name_en": "Emamectin Benzoate + Indoxacarb",
-        "name_mm": "အီမာမက်တင်ဘန်ဇိုရိတ် + အင်ဒိုဇာ့ကာဒ်",
-        "products": ["အီမာဒို ၁၀ WGD -‌ ရွှေသစ်ဦး", "အီမာဒို - အဂရီအိုင်ဒေါ", "အင်ဒိုစတား (ရွှေနဂါး)"]
-      },
-      {
-        "name_en": "Abamectin",
-        "name_mm": "အဘာမက်တင်",
-        "products": ["ဂျက်ကတ် - မင်းမဟော်", "အဘာမက် 1.8 EC - ကောင်းသုခ", "ဒီမွန် 3.6 EC - ဩဘာ"]
-      },
-      {
-        "name_en": "Acetamiprid",
-        "name_mm": "အဆီတာမိပရစ်",
-        "products": ["ရွှေဆီတာ - မြင်းကျား", "ဂိုးဒန်းကီး"]
-      },
-      {
-        "name_en": "Acephate",
-        "name_mm": "အဆီဖိတ်",
-        "products": ["မာလာမြိုင်ဖိတ် - မာလာမြိုင်", "ဩဘာအဆီဖိတ်", "အော်တီမာ 75 SP - ဖန်းလင့်"]
-      },
-      {
-        "name_en": "Lambda-Cyhalothrin",
-        "name_mm": "လန်ဘ်ဒါ ဆိုင်ဟာလိုသရင်",
-        "products": ["ဆိုးဒက် - မြင်းကျား", "ဂိုးဒန်းကီး"]
-      },
-      {
-        "name_en": "Cypermethrin",
-        "name_mm": "ဆိုက်ပါမက်သရင်း",
-        "products": ["သန်းဒါး 250EC - ဩဘာ"]
-      },
-      {
-        "name_en": "Fipronil",
-        "name_mm": "ဖစ်ပရိုနေး",
-        "products": ["တော့ဖိုက်တာ - ရွှေနဂါး", "ဖိုင်နယ် - ရွှေခြင်္သေ့"]
-      }
-    ]
-  }
-{
-  "pest": "ပင်စည်ထိုးယင်",
-  "pest_en": "Stem Borer",
-  "ingredients": [
-    {
-      "name_en": "Chlorpyrifos",
-      "name_mm": "ခလော်ပီရီဖော့စ်",
-      "products": []
-    },
-    {
-      "name_en": "Lambda-Cyhalothrin",
-      "name_mm": "လမ်ဒါ-ဆိုင်ဟာလိုသရင်",
-      "products": []
-    },
-    {
-      "name_en": "Fipronil",
-      "name_mm": "ဖီပရိုနီး",
-      "products": []
-    },
-    {
-      "name_en": "Cartap Hydrochloride",
-      "name_mm": "ကာတာပ်",
-      "products": []
-    },
-    {
-      "name_en": "Thiamethoxam",
-      "name_mm": "သိုင်ယာမီသောင်ဇမ်",
-      "products": []
-    },
-    {
-      "name_en": "Imidacloprid",
-      "name_mm": "အိုင်မီဒါကလိုပရစ်",
-      "products": []
+<!DOCTYPE html>
+<html lang="my">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ရွှေပင်ဆင့်</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      text-align: center;
+      background-color: #ffffff;
     }
-  ]
-}
-]
+    .company-name {
+      margin-top: 60px;
+    }
+    .line1 {
+      font-size: 36px;
+      font-weight: bold;
+      color: red;
+    }
+    .line2 {
+      font-size: 20px;
+      color: blue;
+      margin-top: 8px;
+    }
+    .logo {
+      margin-top: 40px;
+      width: 200px;
+      height: auto;
+    }
+  </style>
+  <script>
+    setTimeout(() => {
+      window.location.href = "search.html";
+    }, 2000);
+  </script>
+</head>
+<body>
+  <div class="company-name">
+    <div class="line1">ရွှေပင်ဆင့်</div>
+    <div class="line2">စိုက်ပျိုးရေးစွမ်းအားစုကုမ္ပဏီလိမိတက်</div>
+  </div>
+  <img src="logo.png" alt="Company Logo" class="logo">
+</body>
+</html>
